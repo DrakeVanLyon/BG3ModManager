@@ -106,6 +106,14 @@ public class Updater : IDisposable
 				Console.WriteLine($"Initializing updater with path '{binPath}'");
 				_initializeUpdaterWrapper!(binPath);
 			}
+			else
+			{
+				Console.WriteLine($"'{_updaterPath}' doesn't export the updater API");
+			}
+		}
+		else
+		{
+			Console.WriteLine($"Failed to load '{_updaterPath}' (error {Marshal.GetLastWin32Error()})");
 		}
 	}
 
