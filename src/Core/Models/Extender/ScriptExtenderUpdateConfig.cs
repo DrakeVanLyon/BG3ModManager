@@ -61,6 +61,11 @@ public class ScriptExtenderUpdateConfig : ReactiveObject
 	[DataMember, Reactive]
 	public bool ValidateSignature { get; set; }
 
+	[DefaultValue(false)]
+	[SettingsEntry("Debug Load SE", "Load BG3ScriptExtender.dll from the game exe folder instead of the updater cache (for testing local Script Extender builds)", true)]
+	[DataMember, Reactive]
+	public bool DebugLoadSE { get; set; }
+
 	public ScriptExtenderUpdateConfig()
 	{
 		this.SetToDefault();
